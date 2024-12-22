@@ -1,0 +1,283 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #2d3748;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #2b6cb0;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.navbar .tagline {
+    margin: 0;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    color: #ffffff;
+    font-style: italic;
+}
+
+/* Main layout */
+.main-content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Section styles */
+section {
+    background: #2d3748;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 1080px;
+    max-width: 100%;
+    text-align: center;
+}
+
+h2 {
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #4a5568;
+    padding-bottom: 0.5rem;
+}
+
+/* Timer styles */
+.pomodoro-section {
+    background-color: #4a5568;
+    flex: 1;
+}
+
+.timer-display {
+    font-size: 4rem;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 1rem 0;
+    font-family: monospace;
+}
+
+.timer-display.running {
+    color: #ffffff;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.timer-inputs {
+    display: flex;
+    gap: 2rem;
+}
+
+.timer-inputs div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-inputs label {
+    margin-bottom: 0.5rem;
+    color: #e2e8f0;
+}
+
+.timer-inputs input {
+    padding: 0.5rem;
+    width: 120px;
+    border: 1px solid #4a5568;
+    border-radius: 4px;
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+
+.timer-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.timer-status {
+    text-align: center;
+    color: #718096;
+    font-size: 1.1rem;
+}
+
+/* Button styles */
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button.start {
+    background-color: #48bb78;
+}
+
+button.start:hover {
+    background-color: #38a169;
+}
+
+button.reset {
+    background-color: #ff0000;
+}
+
+button.reset:hover {
+    background-color: #ff0000;
+}
+
+button.pause {
+    background-color: #ecc94b;
+}
+
+button.pause:hover {
+    background-color: #d69e2e;
+}
+
+button i {
+    font-size: 0.9rem;
+}
+
+/* Todo list styles */
+.todo-section {
+    background-color: #4a5568;
+    flex: 1;
+}
+
+.todo-input {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.todo-input input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #4a5568;
+    border-radius: 4px;
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-list:has(li:nth-child(n+4)) {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: #2d3748;
+    border-radius: 4px;
+    border-left: 4px solid #2b6cb0;
+}
+
+.task-list li.completed {
+    border-left-color: #48bb78;
+    opacity: 0.7;
+}
+
+.task-list li.completed span {
+    text-decoration: line-through;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.task-actions button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.complete-btn {
+    background-color: #48bb78;
+}
+
+.delete-btn {
+    background-color: #e53e3e;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .timer-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .timer-controls input {
+        width: 100%;
+    }
+
+    .todo-input {
+        flex-direction: column;
+    }
+
+    .timer-display {
+        font-size: 3rem;
+    }
+}

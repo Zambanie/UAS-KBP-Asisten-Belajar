@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asisten Belajar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <h1>Asisten Belajar</h1>
+            <p class="tagline">Focus better, achieve more</p>
+        </header>
+
+        <main class="main-content">
+            <section class="pomodoro-section">
+                <h2 style="text-align: center;">Pomodoro Timer</h2>
+                <div class="timer-display">
+                    <span id="minutes">25</span>:<span id="seconds">00</span>
+                </div>
+                <div class="timer-controls">
+                    <div class="timer-inputs">
+                        <div>
+                            <label for="studyMinutes">Waktu Belajar:</label>
+                            <input type="number" id="studyMinutes" placeholder="Waktu Belajar" value="25" min="1">
+                        </div>
+                        <div>
+                            <label for="breakMinutes">Waktu Istirahat:</label>
+                            <input type="number" id="breakMinutes" placeholder="Waktu Istirahat" value="5" min="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="timer-buttons">
+                    <button id="startTimer" class="start"><i class="fas fa-play"></i> Start</button>
+                    <button id="pauseTimer" class="pause"><i class="fas fa-pause"></i> Pause</button>
+                    <button id="resetTimer" class="reset"><i class="fas fa-redo"></i> Reset</button>
+                </div>
+                <div class="timer-status">
+                    <p id="timerState">Waktu Belajar</p>
+                </div>
+            </section>
+
+            <section class="todo-section">
+                <h2 style="text-align: center;">Daftar Studi</h2>
+                <div class="todo-input">
+                    <input type="text" id="taskInput" placeholder="Tambahkan studi baru...">
+                    <button id="addTask" style="background-color: #2b6cb0;"><i class="fas fa-plus"></i> Add Task</button>
+                </div>
+                <ul id="taskList" class="task-list"></ul>
+            </section>
+
+            <section class="spotify-section">
+                <h2 style="text-align: center;">Spotify Music Player</h2>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4V6WLWzdIgr?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </section>
+        </main>
+
+        <footer>
+            <div class="motivation-quote" style="text-align: center;">
+                "Kesuksesan bukanlah akhir, kegagalan bukanlah hal yang fatal: yang penting adalah keberanian untuk terus melanjutkan."
+            </div>
+        </footer>
+    </div>
+    <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+    <audio id="breakAlarmSound" src="selesai.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
